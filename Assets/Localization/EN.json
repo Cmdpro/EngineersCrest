@@ -1,0 +1,10 @@
+﻿{
+  "ENGINEER": {
+    "ENGINEERCRESTNAME": "Engineers Crest",
+    "ENGINEERCRESTDESC": "Create turrets to use your tools automatically"
+  },
+  "ENGINEERTURRETTOOL": {
+    "ENGINEERTURRETTOOLNAME": "Turret",
+    "ENGINEERTURRETTOOLDESC": "You arent supossed to be reading this."
+  }
+}
