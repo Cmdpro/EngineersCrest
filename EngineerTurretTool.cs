@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TeamCherry.Localization;
 
 namespace EngineersCrest
 {
@@ -21,8 +22,8 @@ namespace EngineersCrest
             usageOptions.FsmEventName = "";
             usageOptions.ThrowPrefab = EngineersCrestPlugin.TurretSpawnerPrefab;
             name = "ENGINEERTURRET";
-            description = new() { Key = $"{name}TOOLDESC", Sheet = $"{name}TOOL" };
-            displayName = new() { Key = $"{name}TOOLNAME", Sheet = $"{name}TOOL" };
+            displayName = new LocalisedString($"Mods.{EngineersCrestPlugin.Id}", "ENGINEER_TURRET.NAME");
+            description = new LocalisedString($"Mods.{EngineersCrestPlugin.Id}", "ENGINEER_TURRET.DESC");
             type = ToolItemType.Red;
             baseStorageAmount = 0;
             alternateUnlockedTest = new PlayerDataTest();

@@ -19,12 +19,16 @@
     <!--Shortens and anonymizes paths in debug symbols relative to the project directory. Breakpoints will not work, however.-->
     <PathMap Condition="'$(Configuration)' == 'Release'">$(MSBuildProjectDirectory)=/</PathMap>
   </PropertyGroup>
+  
+  <PropertyGroup>
+    <NeutralLanguage>EN</NeutralLanguage>
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.4.21" />
     <PackageReference Include="Hamunii.BepInEx.AutoPlugin" Version="2.0.1" PrivateAssets="all" />
-    <PackageReference Include="Needleforge" Version="0.4.1" />
+    <PackageReference Include="Needleforge" Version="0.5.3" />
     <PackageReference Include="UnityEngine.Modules" Version="6000.0.50" IncludeAssets="compile" />
     <!--If you're unable resolve this dependency, check that you're using the nuget v3 package feed instead of v2.-->
     <PackageReference Include="Silksong.GameLibs" Version="*-*" PrivateAssets="all" />
@@ -46,9 +50,11 @@
       <Binaries Include="$(TargetDir)/$(TargetName).pdb" />
       <Binaries Include="Thunderstore/*.*" />
       <Binaries Include="README.md" />
+      <Binaries Include="languages/*.json" PackDir="languages" />
     </ItemGroup>
 
-    <Copy SourceFiles="@(Binaries)" DestinationFolder="$(SilksongFolder)/BepInEx/plugins/$(TargetName)" Condition="'$(SilksongFolder)' != '' And Exists('$(SilksongFolder)')" />
+    <Copy SourceFiles="@(Binaries)" DestinationFolder="$(SilksongFolder)/BepInEx/plugins/$(TargetName)/%(Binaries.PackDir)" Condition="'$(SilksongFolder)' != '' And Exists('$(SilksongFolder)')" />
+                
 
     <PropertyGroup>
       <ExportFolder>bin/Publish</ExportFolder>
@@ -56,7 +62,7 @@
 
     <RemoveDir Directories="$(IntermediateOutputPath)/archive" />
     <MakeDir Directories="$(ExportFolder)" />
-    <Copy SourceFiles="@(Binaries)" DestinationFolder="$(IntermediateOutputPath)/archive" />
+    <Copy SourceFiles="@(Binaries)" DestinationFolder="$(IntermediateOutputPath)/archive/%(Binaries.PackDir)" />
     <ZipDirectory SourceDirectory="$(IntermediateOutputPath)/archive" DestinationFile="$(ExportFolder)/$(TargetName).zip" Overwrite="True" />
   </Target>
 </Project>

@@ -5,7 +5,8 @@
   "dependencies": [
     "BepInEx-BepInExPack_Silksong-5.4.2303",
     "Voidlings-Needleforge-0.4.1",
-    "silksong_modding-Silksong_FsmUtil-0.2.0"
-  ],
+    "silksong_modding-Silksong_FsmUtil-0.2.0",
+    "silksong_modding-I18N-0.1.0"
+   ],
   "website_url": "https://github.com/Cmdpro/EngineersCrest"
 }

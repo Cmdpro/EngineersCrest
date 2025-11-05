@@ -26,13 +26,14 @@
       },
       "Needleforge": {
         "type": "Direct",
-        "requested": "[0.4.1, )",
-        "resolved": "0.4.1",
-        "contentHash": "WucpM2jnR16b0ntWc2Q2WcCWCdXniWKDMnDmW9yecdH/MXqDJgTwQg1cApjjijBxx1iEMYRiZT6qeqhXTbbXiw==",
+        "requested": "[0.5.3, )",
+        "resolved": "0.5.3",
+        "contentHash": "9E+OVNCpOFhedqDRFVmpA3EsbxsLDGFSAtb79c42AQnyzDdc3bl/vetCC9L+3uH+URQs+rIJqRqXOF/M8dDkEA==",
         "dependencies": {
           "BepInEx.Core": "5.4.21",
-          "Silksong.FsmUtil": "0.2.0",
-          "Silksong.GameLibs": "1.1.0-silksong1.0.28891",
+          "HarmonyX": "2.9.0",
+          "Silksong.FsmUtil": "0.3.0",
+          "Silksong.PrepatcherPlugin": "1.0.1",
           "UnityEngine.Modules": "6000.0.50"
         }
       },
@@ -55,10 +56,10 @@
       },
       "HarmonyX": {
         "type": "Transitive",
-        "resolved": "2.7.0",
-        "contentHash": "lec/SkduQspMa3Pi/nM/NSvA84Za8HCCWA8ybdToKiTqnBZa+JC5g6rxoFQCg/1vNuYcvjy77edePZzIEsRmvw==",
+        "resolved": "2.9.0",
+        "contentHash": "vB03a0lJJefzSnPP8VJSzyTtgSx81dnxU2olfirHTBnbXY8Uc2BMoxCODPK1nzg4C53lQR0NOi+bp9170sYVFA==",
         "dependencies": {
-          "MonoMod.RuntimeDetour": "21.12.13.1",
+          "MonoMod.RuntimeDetour": "22.1.29.1",
           "System.Reflection.Emit": "4.7.0"
         }
       },
@@ -79,11 +80,11 @@
       },
       "MonoMod.RuntimeDetour": {
         "type": "Transitive",
-        "resolved": "21.12.13.1",
-        "contentHash": "65mB+bHjT6UCGCgO+/pYhpuGPf96rQ1Whwkut/x7cqVIW0DTndDFyWc/3bngzhnY/Y6IYtBMlXsU2ATq+CxpHg==",
+        "resolved": "22.1.29.1",
+        "contentHash": "CksRFEGCPs8VGKe6pc3zsOPd2Jik+FMlmx5HDxWVTxz9JlAmWDk1+0PCwAVw4iGDuDZmIUjZDjhSACasyw9y/Q==",
         "dependencies": {
           "Mono.Cecil": "0.11.4",
-          "MonoMod.Utils": "21.12.13.1",
+          "MonoMod.Utils": "22.1.29.1",
           "System.Collections.NonGeneric": "4.3.0",
           "System.ComponentModel.TypeConverter": "4.3.0",
           "System.IO.FileSystem.Primitives": "4.3.0",
@@ -94,8 +95,8 @@
       },
       "MonoMod.Utils": {
         "type": "Transitive",
-        "resolved": "21.12.13.1",
-        "contentHash": "/H+0RMWqx/D1/fSuY5jhY6GFvqhdYdlnI7J3IfL8P6y4nJkoZDxqts6+RxWWOz4pbnJdWnxSjS8XG+Lq6rUi7w==",
+        "resolved": "22.1.29.1",
+        "contentHash": "qKyM/JXIA3hr2BpE5LTtYfZvIFlcLB62pkORARRv0bXKSk1n23Nl3oAdYymQMjNfrhn/jCPZRqKDFftrYa1K2Q==",
         "dependencies": {
           "Mono.Cecil": "0.11.4",
           "System.Collections.NonGeneric": "4.3.0",
@@ -108,11 +109,21 @@
       },
       "Silksong.FsmUtil": {
         "type": "Transitive",
-        "resolved": "0.2.0",
-        "contentHash": "PXqE0oEvddEVlD1hAfwln4xxVXBQ0153U44bZgwOx3TEqbsPG8CzafVsjzHgXs1AYPX75dnsx0RPkYHUYGEUGA==",
+        "resolved": "0.3.0",
+        "contentHash": "brvPf1qaAEJItbJJPgFWsypm9uG0aGEVhSsYwITXHR9bud7sxRWOreIJXLWTmyK7tM1DX72AnxV53v5CJsBdiQ==",
         "dependencies": {
           "BepInEx.Core": "5.4.21",
           "Silksong.GameLibs": "1.1.0-silksong1.0.28714",
+          "UnityEngine.Modules": "6000.0.50"
+        }
+      },
+      "Silksong.PrepatcherPlugin": {
+        "type": "Transitive",
+        "resolved": "1.0.1",
+        "contentHash": "kFmnjijc54GfssrKkO4RmhAqKoGqJ2sR05Kbd9+NXOEvXX4jvnsGfV//UVrWwFGfd5btBpjJ2sUP3Diq9B36bQ==",
+        "dependencies": {
+          "BepInEx.Core": "5.4.21",
+          "HarmonyX": "2.9.0",
           "UnityEngine.Modules": "6000.0.50"
         }
       },

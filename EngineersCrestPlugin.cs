@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
+using TeamCherry.Localization;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Networking;
@@ -21,7 +22,7 @@ using UnityEngine.UI;
 
 namespace EngineersCrest;
 
-// TODO - adjust the plugin guid as needed
+[BepInDependency("org.silksong-modding.i18n")]
 [BepInAutoPlugin(id: "io.github.engineerscrest")]
 public partial class EngineersCrestPlugin : BaseUnityPlugin
 {
@@ -88,7 +89,6 @@ public partial class EngineersCrestPlugin : BaseUnityPlugin
     {
         instance = this;
         Logger = base.Logger;
-        TranslationUtil.LoadJsonFromEmbedded("EN", "EngineersCrest.Assets.Localization.EN.json");
         LoadAudio((clip) => TurretHitSound = clip, "EngineersCrest.Assets.turrethit.ogg");
 
         Prefabs = new GameObject("Prefabs");
@@ -107,10 +107,13 @@ public partial class EngineersCrestPlugin : BaseUnityPlugin
         Texture2D enginnerSilhouette = LoadTexture("EngineersCrest.Assets.EngineerSilhouette.png");
         Sprite crestSilhouette = Sprite.Create(enginnerSilhouette, new(0, 0, enginnerSilhouette.width, enginnerSilhouette.height), new(0.5f, 0.5f), 100f);
 
-        //Texture2D enginnerGlow = LoadTexture("EngineersCrest.Assets.EngineerGrow.png");
-        //Sprite crestGlow = Sprite.Create(enginnerGlow, new(0, 0, enginnerGlow.width, enginnerGlow.height), new(0.5f, 0.5f), 100f);
+        Texture2D enginnerGlow = LoadTexture("EngineersCrest.Assets.EngineerGlow.png");
+        Sprite crestGlow = Sprite.Create(enginnerGlow, new(0, 0, enginnerGlow.width, enginnerGlow.height), new(0.5f, 0.5f), 100f);
 
-        engineerCrest = NeedleforgePlugin.AddCrest("ENGINEER", crestSprite, crestSilhouette);
+        engineerCrest = NeedleforgePlugin.AddCrest("ENGINEER", 
+            new LocalisedString($"Mods.{Id}", "ENGINEER_CREST.NAME"), 
+            new LocalisedString($"Mods.{Id}", "ENGINEER_CREST.DESC"), 
+        crestSprite, crestSilhouette, crestGlow);
 
         engineerCrest.BindEvent += (healValue, healAmount, healTime, fsm) =>
         {
